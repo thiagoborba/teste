@@ -2,20 +2,20 @@ class ArquivoController {
 
   constructor() {
 
-    let $ = document.querySelector.bind(document);
+  let $ = document.querySelector.bind(document);
 
-    this._inputDados = $('.dados-arquivo');
+  this._inputDados = $('.dados-arquivo');
   }
 
   envia() {
-      let arquivo = this._criaArquivo(this._inputDados)
-      this._limpaFormulario();
-      consoloe.log(arquivo);
+    let arquivo = this._criaArquivo(this._inputDados)
+    this._limpaFormulario();
+    consoloe.log(arquivo);
   }
 
   _limpaFormulario() {
-      this._inputDados.value = '';
-      this._inputDados.focus();
+    this._inputDados.value = '';
+    this._inputDados.focus();
   }
 
   _criaArquivo(dados){
