@@ -8,23 +8,13 @@ class ArquivoController {
   }
 
   envia() {
-    let arquivo = this._criaArquivo(this._inputDados)
+    let arquivo = ArquivoHelper.cria(this._inputDados.value);
     this._limpaFormulario();
-    consoloe.log(arquivo);
+    console.log(`Dados do arquivo: ${arquivo.nome}, ${arquivo.tamanho}, ${arquivo.tipo}`)
   }
 
   _limpaFormulario() {
     this._inputDados.value = '';
     this._inputDados.focus();
-  }
-
-  _criaArquivo(dados){
-  
-    return new Arquivo(this._formataDados(dados));
-  }
-
-  _formataDados(dados){
-
-    return dados.toUpperCase().split('/')
   }
 }
